@@ -24,29 +24,31 @@ const Hero = () => {
           <div>
             <a
               href="#"
-              className="group inline-flex items-center space-x-2 text-lg font-bold tracking-wide text-white"
+              className="inline-flex items-center space-x-2 text-lg font-bold tracking-wide text-white"
             >
-              <IconCube className="size-7 text-amber-400 group-hover:text-amber-500" />
-              <span>Company</span>
+              <IconCube className="size-7 text-accent" />
+              <span>
+                Titan Alloys <span className="text-amber-400">LLC</span>
+              </span>
             </a>
           </div>
           <div className="flex flex-col space-y-4 text-center md:flex-row md:items-center md:justify-between md:space-x-10 md:space-y-0">
             <nav className="space-x-3 md:space-x-6">
               <a
                 href="#"
-                className="text-sm font-semibold text-white hover:text-amber-600"
+                className="text-sm font-semibold text-white hover:text-accent"
               >
                 <span>Features</span>
               </a>
               <a
                 href="#"
-                className="text-sm font-semibold text-white hover:text-amber-600"
+                className="text-sm font-semibold text-white hover:text-accent"
               >
                 <span>Pricing</span>
               </a>
               <a
                 href="#"
-                className="text-sm font-semibold text-white hover:text-amber-600"
+                className="text-sm font-semibold text-white hover:text-accent"
               >
                 <span>Support</span>
               </a>
@@ -61,16 +63,14 @@ const Hero = () => {
       {/* END Main Header */}
       {/* Hero Content */}
       <div className="container relative px-4 lg:px-8 py-16 lg:py-32">
-        <h1 className="font-titillium leading-tight tracking-tighter mb-4 max-w-5xl text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-          quisquam!
+        <h1 className="font-titillium leading-tight mb-4 max-w-3xl text-3xl md:text-4xl lg:text-6xl font-bold text-white">
+          Transforming Your <span className="text-accent">Scrap</span>{' '} into Precious Wealth
         </h1>
-        <h2 className="md:text-lg lg:text-xl font-medium leading-relaxed text-white lg:w-2/3">
-          Save, schedule and generate social media posts for all the networks
-          you are part of. Inspiring results from first day.
+        <h2 className="md:text-lg lg:text-xl font-medium leading-relaxed text-white opacity-80 lg:w-2/3">
+          Welcome to Titan Alloys LLC, where the discarded becomes invaluable. As an Illinois (USA) based Metal Trading Company, we specialize in the intricate processes of handling, recycling, and trading both Ferrous and Non-Ferrous alloys. Our commitment to excellence is exemplified in our expertise in sorting and processing high-value materials such as Tungsten Carbide, Toolsteel, and High Temp Alloys.
         </h2>
         <div className="flex flex-col space-y-2 pb-16 pt-10 sm:flex-row sm:space-x-2 sm:space-y-0">
-          <Button size="lg" className="bg-accent text-accent-foreground">
+          <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground">
             Get Started
           </Button>
           <Button size="lg" variant="secondary">

@@ -6,8 +6,8 @@ import Hero from '@/components/Hero'
 import Logos from '@/components/Logos'
 import Solutions from '@/components/Solutions'
 import Testimonials from '@/components/Testimonials'
-import USPs from '@/components/USPs'
-import Features from '@/components/features'
+import OurProcess from '@/components/Process'
+// import Features from '@/components/features'
 
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
       <Hero />
       <Logos />
       <About />
-      <Features />
-      <USPs />
+      {/* <Features /> */}
+      <OurProcess />
       <Solutions />
       <CTA />
       <ContactForm />

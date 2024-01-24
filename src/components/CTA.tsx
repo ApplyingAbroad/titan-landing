@@ -11,7 +11,7 @@ export default function CTA() {
             height={896}
             width={1344}
             className="h-full w-full object-cover"
-            src="/hero-bg.jpg"
+            src="/about/about-5.jpg"
             alt="Two people working on a project"
           />
         </div>
@@ -23,17 +23,16 @@ export default function CTA() {
               {/* Heading */}
               <div>
                 <h2 className="mb-2 text-5xl font-titillium font-bold text-white">
-                  Build your dream now
+                  Trade Your Scrap, Elevate Your Gains!
                 </h2>
                 <h3 className="mb-7 text-lg text-stone-300">
-                  Start using our professional solution and build next
-                  generation web applications and websites.
+                  Connect with Titan Alloys Today for Top-Notch Metal Solutions and Maximize the Value of Your Materials.
                 </h3>
               </div>
               {/* END Heading */}
 
               {/* Actions */}
-              <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              {/* <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
                 <Button className="bg-accent text-accent-foreground" size="lg">
                   Get Started
                 </Button>
@@ -44,7 +43,7 @@ export default function CTA() {
                 >
                   Learn More
                 </Button>
-              </div>
+              </div> */}
               {/* END Actions */}
             </div>
           </div>

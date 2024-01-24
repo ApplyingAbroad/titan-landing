@@ -1,6 +1,33 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
 
+const DealsIn = [
+  {
+    image: '/products/product-1.jpg',
+    name: 'Tungsten Carbide Cutting Tools',
+    description:
+      'Extend the life cycle of your worn-out tungsten carbide tools. We accept drill bits, inserts, blades, and more, offering competitive prices for this valuable scrap metal.',
+  },
+  {
+    image: '/products/product-2.jpg',
+    name: 'High-Temperature Alloys',
+    description:
+      'Give your superalloys a second life. We recycle Inconel, Incoloy, and other high-performance alloys from jet engines, turbines, and industrial equipment.',
+  },
+  {
+    image: '/products/product-3.webp',
+    name: 'Non-Ferrous Metals',
+    description:
+      'Aluminum, copper, brass, and more – we buy a wide variety of non-ferrous scrap metals. Clean out your storage and bring us your unwanted non-ferrous materials for responsible recycling.',
+  },
+  {
+    image: '/products/product-4.jpg',
+    name: 'Tool Steels',
+    description:
+      "Don't discard your used tool steel – give it a new purpose. We accept a variety of tool steel scrap, including HSS, CPM, and more, ensuring responsible recycling and resource recovery.",
+  },
+]
+
 export default function Solutions() {
   return (
     <>
@@ -10,24 +37,26 @@ export default function Solutions() {
           {/* Heading */}
           <div className="text-center">
             <div className="mb-1 text-sm font-bold uppercase tracking-wider text-muted-foreground">
-              A joy to use
+              We Deal In
             </div>
             <h2 className="mb-4 text-4xl font-titillium font-bold text-black dark:text-white">
-              Fully Featured
+              Navigating the Path to Seamless Metal Transactions
             </h2>
             <div className="mb-3 mx-auto h-1.5 w-12 rounded-lg bg-accent" />
 
             <h3 className="mx-auto text-xl font-medium leading-relaxed text-gray-700 lg:w-2/3 dark:text-gray-300">
-              Amazing and latest features to help you build your next idea with
-              cool tools and super modern technology.
+              Skip the hassle, maximize the value. Titan Alloys streamlines your
+              metal recycling experience, saving you time and money. Unlock the
+              full potential of your scrap - we&apos;re with you every step of
+              the way.
             </h3>
           </div>
           {/* END Heading */}
 
           {/* Features */}
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-12 xl:gap-16">
-            {Array.from({ length: 3 }, (_, i) => (
-              <SolutionCard key={i} />
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+            {DealsIn.map((product, index) => (
+              <SolutionCard key={index} {...product} />
             ))}
           </div>
           {/* END Features */}
@@ -38,26 +67,23 @@ export default function Solutions() {
   )
 }
 
-const SolutionCard = () => {
+const SolutionCard = ({ image, name, description }: (typeof DealsIn)[0]) => {
   return (
     <div className="py-5">
       <div className="aspect-h-3 aspect-w-4 mb-8">
         <Image
           height={800}
           width={600}
-          src="/about/about-2.jpg"
+          src={image}
           className="rounded-lg object-cover w-full h-60"
           alt="Preview Feature Image"
         />
       </div>
-      <h4 className="mb-2 text-lg font-bold">Drag &amp; Drop Development</h4>
-      <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-        With Drag &amp; Drop Development, building web projects becomes a
-        breeze. No coding skills required—simply choose elements, customize
-        layouts, and effortlessly create stunning websites and web applications
-        tailored to your unique vision.
+      <h4 className="mb-2 text-lg font-bold">{name}</h4>
+      <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-400">
+        {description}
       </p>
-      <Button variant="outline">Learn More</Button>
+      {/* <Button variant="outline">Learn More</Button> */}
     </div>
   )
 }
