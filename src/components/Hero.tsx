@@ -61,11 +61,11 @@ const Hero = () => {
       {/* END Main Header */}
       {/* Hero Content */}
       <div className="container relative px-4 lg:px-8 py-16 lg:py-32">
-        <h1 className="font-titillium leading-tight tracking-tighter mb-4 max-w-5xl text-4xl lg:text-5xl font-bold text-white">
+        <h1 className="font-titillium leading-tight tracking-tighter mb-4 max-w-5xl text-3xl md:text-4xl lg:text-5xl font-bold text-white">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
           quisquam!
         </h1>
-        <h2 className="text-xl font-medium leading-relaxed text-white lg:w-2/3">
+        <h2 className="md:text-lg lg:text-xl font-medium leading-relaxed text-white lg:w-2/3">
           Save, schedule and generate social media posts for all the networks
           you are part of. Inspiring results from first day.
         </h2>

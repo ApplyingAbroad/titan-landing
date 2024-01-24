@@ -8,7 +8,7 @@ export default function ContactForm() {
   return (
     <>
       {/* Contact Section: Split With Image */}
-      <div className="relative bg-stone-100 bg-cover container max-w-5xl -mt-28 px-0 border-accent border-4">
+      <div className="relative bg-stone-100 bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4">
         <div className="absolute inset-0">
           <Image
             height={896}
@@ -19,7 +19,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="relative flex items-center overflow-hidden">
-          <div className="absolute bottom-0 left-1/2 top-0 w-full bg-white shadow-lg lg:w-1/2 dark:bg-gray-800" />
+          <div className="absolute bottom-0 lg:left-1/2 top-0 w-full bg-white shadow-lg lg:w-1/2 dark:bg-gray-800" />
           <div className="container relative mx-auto px-4 py-16 lg:px-8">
             <div className="ml-auto space-y-16 lg:w-1/2 lg:px-14 xl:px-20">
               {/* Heading */}
