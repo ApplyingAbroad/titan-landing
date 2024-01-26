@@ -1,23 +1,25 @@
 import { IconCircleCheckFilled } from '@tabler/icons-react'
 import Image from 'next/image'
 
-
 const steps = [
   {
     id: 1,
     title: 'Step 1: Request a Quote',
-    description: 'Begin your journey with Titan Alloys by reaching out to us for a personalized quote on your materials. Our responsive team is ready to assess the value of your alloys and provide you with a competitive quote that reflects our commitment to maximizing returns for our suppliers.'
+    description:
+      'Begin your journey with Titan Alloys by reaching out to us for a personalized quote on your materials. Our responsive team is ready to assess the value of your alloys and provide you with a competitive quote that reflects our commitment to maximizing returns for our suppliers.',
   },
   {
     id: 2,
     title: 'Step 2: Ship Your Materials',
-    description: 'Once you&apos;ve received your quote and are ready to proceed, securely ship your materials to our state- of - the - art facilities.Our logistics team ensures a smooth and efficient process, guiding you through every step to guarantee the safe arrival of your alloys at Titan Alloys.'
+    description:
+      'Once you&apos;ve received your quote and are ready to proceed, securely ship your materials to our state- of - the - art facilities.Our logistics team ensures a smooth and efficient process, guiding you through every step to guarantee the safe arrival of your alloys at Titan Alloys.',
   },
   {
     id: 3,
     title: 'Step 3: Material Inspection & Payment',
-    description: 'Upon receiving your shipment, our dedicated team conducts a thorough inspection and segregation of materials. We prioritize transparency in our processes, ensuring that you are informed every step of the way. Once the inspection is complete, we swiftly process your payment, ensuring you receive the maximum value for your alloys promptly.'
-  }
+    description:
+      'Upon receiving your shipment, our dedicated team conducts a thorough inspection and segregation of materials. We prioritize transparency in our processes, ensuring that you are informed every step of the way. Once the inspection is complete, we swiftly process your payment, ensuring you receive the maximum value for your alloys promptly.',
+  },
 ]
 
 export default function OurProcess() {
@@ -36,30 +38,29 @@ export default function OurProcess() {
                 </h2>
                 <div className="mb-3 h-1.5 w-12 rounded-lg bg-accent" />
                 <h3 className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-                  Skip the hassle, maximize the value. Titan Alloys streamlines your metal recycling experience, saving you time and money. Unlock the full potential of your scrap - we&apos;re with you every step of the way.
+                  Skip the hassle, maximize the value. Titan Alloys streamlines
+                  your metal recycling experience, saving you time and money.
+                  Unlock the full potential of your scrap - we&apos;re with you
+                  every step of the way.
                 </h3>
               </div>
 
               <div className="space-y-8 xl:w-3/4">
-                {
-                  steps.map((step) => (
-                    <div
-                      key={step.id}
-                      className="flex space-x-4">
-                      <div className="flex-none text-accent-foreground">
-                        <IconCircleCheckFilled className="inline-block size-5" />
-                      </div>
-                      <div>
-                        <h4 className="mb-2 text-lg font-semibold">
-                          {step.title}
-                        </h4>
-                        <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                          {step.description}
-                        </p>
-                      </div>
+                {steps.map((step) => (
+                  <div key={step.id} className="flex space-x-4">
+                    <div className="flex-none text-accent-foreground">
+                      <IconCircleCheckFilled className="inline-block size-5" />
                     </div>
-                  ))
-                }
+                    <div>
+                      <h4 className="mb-2 text-lg font-semibold">
+                        {step.title}
+                      </h4>
+                      <p className="leading-relaxed text-gray-600 dark:text-gray-400">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             <div

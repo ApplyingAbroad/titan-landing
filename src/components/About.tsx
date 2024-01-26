@@ -1,4 +1,8 @@
-import { Icon3dRotate, IconMedal, IconSortAscendingShapes, IconStars, IconUserBolt } from '@tabler/icons-react'
+import {
+  Icon3dRotate,
+  IconSortAscendingShapes,
+  IconStars,
+} from '@tabler/icons-react'
 import Image from 'next/image'
 
 const features = [
@@ -6,19 +10,22 @@ const features = [
     id: 1,
     icon: IconStars,
     title: 'Expert Alloy Handling',
-    description: 'Our team at Titan Alloys possesses specialized expertise in the intricate handling of various alloys, ensuring precision and quality in every process'
+    description:
+      'Our team at Titan Alloys possesses specialized expertise in the intricate handling of various alloys, ensuring precision and quality in every process',
   },
   {
     id: 2,
     icon: Icon3dRotate,
     title: 'Advanced Processing and Recycling',
-    description: 'Utilizing state-of-the-art technology, we excel in processing and recycling ferrous and non-ferrous alloys, contributing to a sustainable and eco-friendly approach.'
+    description:
+      'Utilizing state-of-the-art technology, we excel in processing and recycling ferrous and non-ferrous alloys, contributing to a sustainable and eco-friendly approach.',
   },
   {
     id: 3,
     icon: IconSortAscendingShapes,
     title: 'Precision Sorting of High-Value Alloys',
-    description: 'Titan Alloys is at the forefront of sorting Tungsten Carbide, Toolsteel, and High Temp Alloys with unmatched precision, guaranteeing optimal value for each material.'
+    description:
+      'Titan Alloys is at the forefront of sorting Tungsten Carbide, Toolsteel, and High Temp Alloys with unmatched precision, guaranteeing optimal value for each material.',
   },
 ]
 
@@ -38,7 +45,10 @@ export default function About() {
             </h2>
             <div className="mb-3 h-1.5 w-12 rounded-lg bg-accent" />
             <h3 className="text-xl font-medium leading-relaxed text-gray-800 lg:w-1/2 dark:text-gray-300">
-              At Titan Alloys LLC, we stand as pioneers in the dynamic realm of metal trading, processing, and recycling. Established in the heart of Illinois, USA, our journey is fueled by a relentless commitment to innovation, sustainability, and integrity.
+              At Titan Alloys LLC, we stand as pioneers in the dynamic realm of
+              metal trading, processing, and recycling. Established in the heart
+              of Illinois, USA, our journey is fueled by a relentless commitment
+              to innovation, sustainability, and integrity.
             </h3>
           </div>
           {/* END Heading */}
@@ -80,15 +90,10 @@ export default function About() {
   )
 }
 
-const Feature = ({ icon: Icon, title, description }: typeof features[0]) => (
+const Feature = ({ icon: Icon, title, description }: (typeof features)[0]) => (
   <div>
-    <Icon
-      strokeWidth={1.5}
-      className="w-10 h-10 mb-4 text-accent"
-    />
-    <h3 className="mb-2 text-xl font-bold">
-      {title}
-    </h3>
+    <Icon strokeWidth={1.5} className="w-10 h-10 mb-4 text-accent" />
+    <h3 className="mb-2 text-xl font-bold">{title}</h3>
     <p className="leading-relaxed text-gray-700 dark:text-gray-400">
       {description}
     </p>

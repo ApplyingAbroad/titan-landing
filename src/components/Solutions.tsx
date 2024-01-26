@@ -83,7 +83,7 @@ const SolutionCard = ({ image, name, description }: (typeof DealsIn)[0]) => {
       <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-400">
         {description}
       </p>
-      {/* <Button variant="outline">Learn More</Button> */}
+      <Button variant="outline">Learn More</Button>
     </div>
   )
 }

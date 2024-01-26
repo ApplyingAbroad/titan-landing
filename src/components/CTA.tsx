@@ -26,7 +26,8 @@ export default function CTA() {
                   Trade Your Scrap, Elevate Your Gains!
                 </h2>
                 <h3 className="mb-7 text-lg text-stone-300">
-                  Connect with Titan Alloys Today for Top-Notch Metal Solutions and Maximize the Value of Your Materials.
+                  Connect with Titan Alloys Today for Top-Notch Metal Solutions
+                  and Maximize the Value of Your Materials.
                 </h3>
               </div>
               {/* END Heading */}
