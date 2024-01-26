@@ -13,8 +13,8 @@ const Page = ({
     metalSlug: string
   }
 }) => {
-  const pageContent = matter(readFileSync(`content/${metalSlug}.md`))
-  const allContent = glob.sync('content/*.md')
+  const pageContent = matter(readFileSync(`content/${metalSlug}.mdx`))
+  const allContent = glob.sync('content/*.mdx')
   console.log(allContent)
   return (
     <div className="container flex flex-col lg:flex-row-reverse gap-5 mx-auto py-8">
