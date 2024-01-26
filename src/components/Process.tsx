@@ -25,7 +25,10 @@ const steps = [
 export default function OurProcess() {
   return (
     <>
-      <div className="overflow-hidden bg-stone-100 dark:bg-gray-900 dark:text-gray-100">
+      <div
+        id="process"
+        className="overflow-hidden bg-stone-100 dark:bg-gray-900 dark:text-gray-100"
+      >
         <div className="container mx-auto px-4 py-16 lg:px-8 lg:py-32">
           <div className="flex flex-col space-y-20 lg:flex-row lg:items-center lg:space-x-20 lg:space-y-0">
             <div className="space-y-10 md:py-12 lg:w-1/2 xl:w-3/5">

@@ -33,7 +33,7 @@ export default function About() {
   return (
     <>
       {/* About Section: Company with Images */}
-      <div className="bg-white text-accent-foreground">
+      <div id="about" className="bg-white text-accent-foreground">
         <div className="container mx-auto space-y-16 px-4 py-16 lg:px-8 lg:py-32">
           {/* Heading */}
           <div>

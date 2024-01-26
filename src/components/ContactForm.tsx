@@ -8,7 +8,10 @@ export default function ContactForm() {
   return (
     <>
       {/* Contact Section: Split With Image */}
-      <div className="relative bg-stone-100 bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4">
+      <div
+        id="contact"
+        className="scroll-m-28 relative bg-stone-100 bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4"
+      >
         <div className="absolute inset-0">
           <Image
             height={896}

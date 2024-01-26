@@ -1,28 +1,33 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
+import Link from 'next/link'
 
 const DealsIn = [
   {
     image: '/products/product-1.jpg',
     name: 'Tungsten Carbide Cutting Tools',
+    slug: 'tungsten-carbide',
     description:
       'Extend the life cycle of your worn-out tungsten carbide tools. We accept drill bits, inserts, blades, and more, offering competitive prices for this valuable scrap metal.',
   },
   {
     image: '/products/product-2.jpg',
     name: 'High-Temperature Alloys',
+    slug: 'high-temperature-alloys',
     description:
       'Give your superalloys a second life. We recycle Inconel, Incoloy, and other high-performance alloys from jet engines, turbines, and industrial equipment.',
   },
   {
     image: '/products/product-3.webp',
     name: 'Non-Ferrous Metals',
+    slug: 'non-ferrous-metals',
     description:
       'Aluminum, copper, brass, and more – we buy a wide variety of non-ferrous scrap metals. Clean out your storage and bring us your unwanted non-ferrous materials for responsible recycling.',
   },
   {
     image: '/products/product-4.jpg',
     name: 'Tool Steels',
+    slug: 'tool-steel',
     description:
       "Don't discard your used tool steel – give it a new purpose. We accept a variety of tool steel scrap, including HSS, CPM, and more, ensuring responsible recycling and resource recovery.",
   },
@@ -32,7 +37,10 @@ export default function Solutions() {
   return (
     <>
       {/* Features Section: With Images */}
-      <div className="bg-white dark:bg-gray-900 dark:text-gray-100">
+      <div
+        id="deals-in"
+        className="bg-white dark:bg-gray-900 dark:text-gray-100"
+      >
         <div className="container mx-auto space-y-16 px-4 py-16 lg:px-8 lg:py-32">
           {/* Heading */}
           <div className="text-center">
@@ -67,7 +75,12 @@ export default function Solutions() {
   )
 }
 
-const SolutionCard = ({ image, name, description }: (typeof DealsIn)[0]) => {
+const SolutionCard = ({
+  image,
+  name,
+  description,
+  slug,
+}: (typeof DealsIn)[0]) => {
   return (
     <div className="py-5">
       <div className="aspect-h-3 aspect-w-4 mb-8">
@@ -83,7 +96,9 @@ const SolutionCard = ({ image, name, description }: (typeof DealsIn)[0]) => {
       <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-400">
         {description}
       </p>
-      <Button variant="outline">Learn More</Button>
+      <Link href={`/deals-in/${slug}`}>
+        <Button variant="outline">Learn More</Button>
+      </Link>
     </div>
   )
 }

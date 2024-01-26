@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // https://cdn.tailkit.com/media/placeholders/photo-Nyvq2juw4_o-1280x400.jpg
+  webpack: function (config) {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    })
+    return config
+  },
   images: {
     remotePatterns: [
       {
