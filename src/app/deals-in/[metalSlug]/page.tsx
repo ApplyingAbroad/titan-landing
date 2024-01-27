@@ -6,6 +6,10 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import * as glob from 'glob'
+// import highTempAlloys from '@/../public/content/high-temperature-alloys.mdx'
+// import tungstenCarbide from '@/../public/content/tungsten-carbide.mdx'
+// import toolSteel from '@/../public/content/tool-steel.mdx'
+// import nonFerrousMetals from '@/../public/content/non-ferrous-metals.mdx'
 
 const Page = ({
   params: { metalSlug },
@@ -15,8 +19,15 @@ const Page = ({
   }
 }) => {
 
-  const pageContent = matter(readFileSync(`./content/${metalSlug}.mdx`))
-  const allContent = glob.sync('./content/*.mdx')
+  const pageContent = matter(readFileSync(`./public/content/${metalSlug}.mdx`))
+
+  // const reader = new FileReader()
+  // reader.onload = async () => {
+  //   console.log('reader started')
+  // };
+  // reader.readAsText()
+
+  const allContent = glob.sync('public/content/*.mdx')
   console.log(allContent)
   return (
     <div className="container flex flex-col lg:flex-row-reverse gap-5 mx-auto py-8">
