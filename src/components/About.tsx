@@ -45,10 +45,10 @@ export default function About() {
             </h2>
             <div className="mb-3 h-1.5 w-12 rounded-lg bg-accent" />
             <h3 className="text-xl font-medium leading-relaxed text-gray-800 lg:w-1/2 dark:text-gray-300">
-              At Titan Alloys LLC, we stand as pioneers in the dynamic realm of
-              metal trading, processing, and recycling. Established in the heart
-              of Illinois, USA, our journey is fueled by a relentless commitment
-              to innovation, sustainability, and integrity.
+
+              Titan Alloys LLC a Illinois (USA) based Metal Trading Company specializes in processing, recycling and trading of Ferrous and Non-Ferrous alloys.
+
+              We at Titan Alloys LLC are experts in handling, processing and sorting of Tungsten carbide, Toolsteel & High Temp Alloys. Having a global footprint with access across the world we can ensure that our suppliers get most value for their materials
             </h3>
           </div>
           {/* END Heading */}

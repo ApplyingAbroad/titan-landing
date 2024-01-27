@@ -6,6 +6,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import * as glob from 'glob'
+
 const Page = ({
   params: { metalSlug },
 }: {
@@ -13,8 +14,9 @@ const Page = ({
     metalSlug: string
   }
 }) => {
-  const pageContent = matter(readFileSync(`content/${metalSlug}.mdx`))
-  const allContent = glob.sync('content/*.mdx')
+
+  const pageContent = matter(readFileSync(`./content/${metalSlug}.mdx`))
+  const allContent = glob.sync('./content/*.mdx')
   console.log(allContent)
   return (
     <div className="container flex flex-col lg:flex-row-reverse gap-5 mx-auto py-8">
