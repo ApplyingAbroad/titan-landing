@@ -3,6 +3,7 @@ import { Titillium_Web, Barlow_Semi_Condensed } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/ui/Footer'
 import Navbar from '@/components/ui/navbar'
+import WhatsappBecon from '@/components/ui/whatsappBeacon'
 
 const titilliumWeb = Titillium_Web({
   weight: ['200', '300', '400', '600', '700', '900'],
@@ -36,6 +37,7 @@ export default function RootLayout({
           barlowSemiCondensed.variable
         }
       >
+        <WhatsappBecon />
         <Navbar />
 
         {children}
