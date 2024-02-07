@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { readFileSync, readdirSync } from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
 const DealsIn = [
   {
@@ -34,6 +37,9 @@ const DealsIn = [
 ]
 
 export default function Solutions() {
+  const contentFolderPath = path.join(process.cwd(), '/content')
+  const allfiles = readdirSync(contentFolderPath)
+
   return (
     <>
       {/* Features Section: With Images */}
@@ -52,7 +58,7 @@ export default function Solutions() {
             </h2>
             <div className="mb-3 mx-auto h-1.5 w-12 rounded-lg bg-accent" />
 
-            <h3 className="mx-auto text-xl font-medium leading-relaxed text-gray-700 lg:w-2/3 dark:text-gray-300">
+            <h3 className="mx-auto text-xl font-medium leading-relaxed text-gray-700 lg:w-2/3">
               Skip the hassle, maximize the value. Titan Alloys streamlines your
               metal recycling experience, saving you time and money. Unlock the
               full potential of your scrap - we&apos;re with you every step of
@@ -63,9 +69,18 @@ export default function Solutions() {
 
           {/* Features */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-            {DealsIn.map((product, index) => (
-              <SolutionCard key={index} {...product} />
-            ))}
+            {allfiles.map((metalSlug, index) => {
+              const filePath = path.join(contentFolderPath, metalSlug)
+              const pageContent = matter(readFileSync(filePath, 'utf8'))
+              return (
+                <SolutionCard key={index}
+                  image={pageContent.data.image}
+                  name={pageContent.data.title}
+                  description={pageContent.data.description}
+                  slug={metalSlug.split('.mdx')[0]}
+                />
+              )
+            })}
           </div>
           {/* END Features */}
         </div>
@@ -93,7 +108,7 @@ const SolutionCard = ({
         />
       </div>
       <h4 className="mb-2 text-lg font-bold">{name}</h4>
-      <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-400">
+      <p className="mb-4 leading-relaxed text-gray-600 line-clamp-2">
         {description}
       </p>
       <Link href={`/deals-in/${slug}`}>

@@ -1,9 +1,14 @@
+import { readFileSync, readdirSync } from 'fs';
+import matter from 'gray-matter';
 import Link from 'next/link'
+import path from 'path';
 
 export default function Footer() {
+  const contentFolderPath = path.join(process.cwd(), '/content')
+  const allfiles = readdirSync(contentFolderPath)
+
   return (
     <>
-      {/* Footer Section: With Links Info Newsletter */}
       <footer
         id="page-footer"
         className="bg-white dark:bg-gray-900 dark:text-gray-100"
@@ -12,39 +17,24 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             <div className="space-y-6">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-400/75">
-                Products
+                Deals in
               </h4>
               <nav className="flex flex-col space-y-3 text-sm">
-                <a
-                  href="#"
-                  className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-                >
-                  Solutions
-                </a>
-                <a
-                  href="#"
-                  className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-                >
-                  Pricing Plans
-                </a>
-                <a
-                  href="#"
-                  className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-                >
-                  Analytics
-                </a>
-                <a
-                  href="#"
-                  className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-                >
-                  Support Center
-                </a>
+                {
+                  allfiles.map(metalSlug => {
+                    const filePath = path.join(contentFolderPath, metalSlug);
+                    const pageContent = matter(readFileSync(filePath, 'utf8'));
+                    return (
+                      <Link
+                        href={`/deals-in/${metalSlug.split('.mdx')[0]}`}
+                        key={metalSlug}
+                        className="font-medium text-gray-700 hover:text-gray-950 hover:underline"
+                      >
+                        {pageContent.data.caption}
+                      </Link>
+                    )
+                  })
+                }
               </nav>
             </div>
             <div className="space-y-6">
@@ -58,12 +48,12 @@ export default function Footer() {
                 >
                   Terms of Service
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  href="/privacy-policy"
                   className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </nav>
             </div>
             <div className="space-y-6">

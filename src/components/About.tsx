@@ -44,7 +44,7 @@ export default function About() {
               Empowering the Metal Industry with Innovation and Integrity
             </h2>
             <div className="mb-3 h-1.5 w-12 rounded-lg bg-accent" />
-            <h3 className="text-xl font-medium leading-relaxed text-gray-800 lg:w-1/2 dark:text-gray-300">
+            <h3 className="text-lg font-medium leading-relaxed text-gray-800">
               Titan Alloys LLC a Illinois (USA) based Metal Trading Company
               specializes in processing, recycling and trading of Ferrous and
               Non-Ferrous alloys. We at Titan Alloys LLC are experts in

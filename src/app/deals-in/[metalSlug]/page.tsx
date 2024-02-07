@@ -5,8 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import * as glob from 'glob'
 import path from 'path'
+
+export const metadata = {
+  title: 'Deals In | Titan Alloys LLC',
+  description:
+    'Titan Alloys LLC deals in various metals and alloys including Tungsten Carbide, Toolsteel, and High-Temperature Alloys. Our expertise lies in the meticulous processes involved in sorting and processing high-value materials.',
+  image: '/default-thumbnail.png',
+}
+
 
 const Page = ({
   params: { metalSlug },
@@ -15,6 +22,7 @@ const Page = ({
     metalSlug: string
   }
 }) => {
+
   const pageContent = matter(
     readFileSync(
       path.join(process.cwd(), `./content/${metalSlug}.mdx`),
@@ -22,8 +30,9 @@ const Page = ({
     ),
   )
 
-  const allContent = glob.sync('./content/*.mdx')
-  console.log(allContent)
+  metadata.title = `${pageContent.data.title} | Titan Alloys LLC`
+  metadata.description = pageContent.data.description
+  metadata.image = pageContent.data.image
 
   return (
     <div className="container flex flex-col lg:flex-row-reverse gap-5 mx-auto py-8">
@@ -31,7 +40,7 @@ const Page = ({
         height={800}
         width={600}
         src={pageContent.data.image}
-        className="rounded-lg object-cover w-full lg:w-auto lg:h-full mt-12 lg:sticky lg:top-28"
+        className="rounded-lg object-cover w-full lg:min-w-96 lg:max-w-xl lg:h-full mt-12 lg:sticky lg:top-28"
         alt="Preview Feature Image"
       />
       <main>
