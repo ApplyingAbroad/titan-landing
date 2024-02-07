@@ -1,7 +1,7 @@
-import { readFileSync, readdirSync } from 'fs';
-import matter from 'gray-matter';
+import { readFileSync, readdirSync } from 'fs'
+import matter from 'gray-matter'
 import Link from 'next/link'
-import path from 'path';
+import path from 'path'
 
 export default function Footer() {
   const contentFolderPath = path.join(process.cwd(), '/content')
@@ -20,21 +20,19 @@ export default function Footer() {
                 Deals in
               </h4>
               <nav className="flex flex-col space-y-3 text-sm">
-                {
-                  allfiles.map(metalSlug => {
-                    const filePath = path.join(contentFolderPath, metalSlug);
-                    const pageContent = matter(readFileSync(filePath, 'utf8'));
-                    return (
-                      <Link
-                        href={`/deals-in/${metalSlug.split('.mdx')[0]}`}
-                        key={metalSlug}
-                        className="font-medium text-gray-700 hover:text-gray-950 hover:underline"
-                      >
-                        {pageContent.data.caption}
-                      </Link>
-                    )
-                  })
-                }
+                {allfiles.map((metalSlug) => {
+                  const filePath = path.join(contentFolderPath, metalSlug)
+                  const pageContent = matter(readFileSync(filePath, 'utf8'))
+                  return (
+                    <Link
+                      href={`/deals-in/${metalSlug.split('.mdx')[0]}`}
+                      key={metalSlug}
+                      className="font-medium text-gray-700 hover:text-gray-950 hover:underline"
+                    >
+                      {pageContent.data.caption}
+                    </Link>
+                  )
+                })}
               </nav>
             </div>
             <div className="space-y-6">

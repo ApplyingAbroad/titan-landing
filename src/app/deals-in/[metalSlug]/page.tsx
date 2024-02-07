@@ -14,7 +14,6 @@ export const metadata = {
   image: '/default-thumbnail.png',
 }
 
-
 const Page = ({
   params: { metalSlug },
 }: {
@@ -22,7 +21,6 @@ const Page = ({
     metalSlug: string
   }
 }) => {
-
   const pageContent = matter(
     readFileSync(
       path.join(process.cwd(), `./content/${metalSlug}.mdx`),

@@ -23,7 +23,6 @@ const WhatsappBecon = () => {
           className="w-16 h-16 group-hover:shadow-2xl rounded-full transition-all shadow-green-500"
         />
       </Link>
-
     </>
   )
 }

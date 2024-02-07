@@ -73,7 +73,8 @@ export default function Solutions() {
               const filePath = path.join(contentFolderPath, metalSlug)
               const pageContent = matter(readFileSync(filePath, 'utf8'))
               return (
-                <SolutionCard key={index}
+                <SolutionCard
+                  key={index}
                   image={pageContent.data.image}
                   name={pageContent.data.title}
                   description={pageContent.data.description}
