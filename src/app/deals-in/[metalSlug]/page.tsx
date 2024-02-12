@@ -6,12 +6,19 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import path from 'path'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export const metadata = {
   title: 'Deals In | Titan Alloys LLC',
   description:
     'Titan Alloys LLC deals in various metals and alloys including Tungsten Carbide, Toolsteel, and High-Temperature Alloys. Our expertise lies in the meticulous processes involved in sorting and processing high-value materials.',
-  image: '/default-thumbnail.png',
+
 }
 
 const Page = ({
@@ -30,19 +37,14 @@ const Page = ({
 
   metadata.title = `${pageContent.data.title} | Titan Alloys LLC`
   metadata.description = pageContent.data.description
-  metadata.image = pageContent.data.image
+
+  const images: string[] = pageContent.data.images
 
   return (
-    <div className="container flex flex-col lg:flex-row-reverse gap-5 mx-auto py-8">
-      <Image
-        height={800}
-        width={600}
-        src={pageContent.data.image}
-        className="rounded-lg object-cover w-full lg:min-w-96 lg:max-w-xl lg:h-full mt-12 lg:sticky lg:top-28"
-        alt="Preview Feature Image"
-      />
+    <div className="container flex flex-col items-center mx-auto py-10 lg:py-20">
+
       <main>
-        <div className="py-10 lg:py-32 w-full">
+        <div className="max-w-4xl w-full">
           <div className="mb-3 flex items-center gap-1">
             <Link
               href="/"
@@ -63,7 +65,24 @@ const Page = ({
             {pageContent.data.description}
           </h3>
         </div>
-        <div className="prose text-accent-foreground">
+        <Carousel className="mx-auto max-w-3xl w-full my-10 h-fit">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index} className='rounded-lg'>
+                <Image
+                  height={800}
+                  width={600}
+                  src={image}
+                  className="object-cover w-full lg:min-w-96 h-96 "
+                  alt="Preview Feature Image"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className='hidden lg:flex' />
+          <CarouselNext className='hidden lg:flex' />
+        </Carousel>
+        <div className="prose max-w-4xl text-accent-foreground">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {pageContent.content}
           </ReactMarkdown>

@@ -5,36 +5,7 @@ import { readFileSync, readdirSync } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const DealsIn = [
-  {
-    image: '/products/product-1.jpg',
-    name: 'Tungsten Carbide Cutting Tools',
-    slug: 'tungsten-carbide',
-    description:
-      'Extend the life cycle of your worn-out tungsten carbide tools. We accept drill bits, inserts, blades, and more, offering competitive prices for this valuable scrap metal.',
-  },
-  {
-    image: '/products/product-2.jpg',
-    name: 'High-Temperature Alloys',
-    slug: 'high-temperature-alloys',
-    description:
-      'Give your superalloys a second life. We recycle Inconel, Incoloy, and other high-performance alloys from jet engines, turbines, and industrial equipment.',
-  },
-  {
-    image: '/products/product-3.webp',
-    name: 'Non-Ferrous Metals',
-    slug: 'non-ferrous-metals',
-    description:
-      'Aluminum, copper, brass, and more – we buy a wide variety of non-ferrous scrap metals. Clean out your storage and bring us your unwanted non-ferrous materials for responsible recycling.',
-  },
-  {
-    image: '/products/product-4.jpg',
-    name: 'Tool Steels',
-    slug: 'tool-steel',
-    description:
-      "Don't discard your used tool steel – give it a new purpose. We accept a variety of tool steel scrap, including HSS, CPM, and more, ensuring responsible recycling and resource recovery.",
-  },
-]
+
 
 export default function Solutions() {
   const contentFolderPath = path.join(process.cwd(), '/content')
@@ -72,7 +43,7 @@ export default function Solutions() {
               return (
                 <SolutionCard
                   key={index}
-                  image={pageContent.data.image}
+                  image={pageContent.data.featureImage}
                   name={pageContent.data.title}
                   description={pageContent.data.description}
                   slug={metalSlug.split('.mdx')[0]}
@@ -88,12 +59,19 @@ export default function Solutions() {
   )
 }
 
+interface DealsInProps {
+  image: string
+  name: string
+  description: string
+  slug: string
+}
+
 const SolutionCard = ({
   image,
   name,
   description,
   slug,
-}: (typeof DealsIn)[0]) => {
+}: DealsInProps) => {
   return (
     <div className="py-5">
       <div className="aspect-h-3 aspect-w-4 mb-8">
