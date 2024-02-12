@@ -1,13 +1,30 @@
+'use client'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
+import { FormEvent } from 'react'
 
 export default function ContactForm() {
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwV2h0r3Nb9XP5oh2q4tqioOcLdERzcsbRZv1AvXao5iIIZCKVf-eTO-Uz8yQLAAwTd/exec'
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const data = new FormData(e.target as HTMLFormElement)
+    console.log(data.get('name'))
+    fetch(scriptURL, { method: 'POST', body: data })
+      .then((res) => {
+        console.log(res)
+        console.log("SUCCESSFULLY SUBMITTED")
+        alert('Thank you for reaching out to us. We will get back to you soon.')
+      })
+      .catch(err => console.log(err))
+  }
   return (
     <>
-      {/* Contact Section: Split With Image */}
       <div
         id="contact"
         className="scroll-m-28 relative bg-stone-100 bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4"
@@ -35,15 +52,14 @@ export default function ContactForm() {
                   We always love to hear from you.
                 </h3>
               </div>
-              {/* END Heading */}
-
-              {/* Contact Form */}
-              <form className="w-full space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="w-full space-y-6">
                 <div className="space-y-1">
                   <Label htmlFor="name" className="font-medium">
                     First Name
                   </Label>
-                  <Input id="name" name="name" placeholder="John" />
+                  <Input required id="name" name="name" placeholder="John" />
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="email">Email</Label>
@@ -51,6 +67,7 @@ export default function ContactForm() {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     placeholder="name@company.com"
                   />
                 </div>
@@ -64,16 +81,16 @@ export default function ContactForm() {
                     placeholder="Your message here"
                   />
                 </div>
-                <Button size="lg">
+                <Button
+                  type='submit'
+                  size="lg">
                   <span>Send Message</span>
                 </Button>
               </form>
-              {/* END Contact Form */}
             </div>
           </div>
         </div>
       </div>
-      {/* END Contact Section: Split With Image */}
     </>
   )
 }

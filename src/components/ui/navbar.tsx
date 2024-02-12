@@ -2,14 +2,20 @@ import React from 'react'
 import { Button } from './button'
 import { IconCube } from '@tabler/icons-react'
 import Link from 'next/link'
+import { readFileSync, readdirSync } from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-const links = [
-  { id: '1', href: '/#about', label: 'About' },
-  { id: '2', href: '/#process', label: 'Our Process' },
-  { id: '3', href: '/#deals-in', label: 'We Deal In' },
-]
+// const links = [
+//   { id: '1', href: '/#about', label: 'About' },
+//   { id: '2', href: '/#process', label: 'Our Process' },
+//   { id: '3', href: '/#deals-in', label: 'We Deal In' },
+// ]
 
 const Navbar = () => {
+  const contentFolderPath = path.join(process.cwd(), '/content')
+  const allfiles = readdirSync(contentFolderPath)
+
   return (
     <header
       id="page-header"
@@ -29,8 +35,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex flex-col space-y-4 text-center md:flex-row md:items-center md:justify-between md:space-x-10 md:space-y-0">
-          <nav className="space-x-3 md:space-x-6">
-            {links.map(({ id, href, label }) => (
+          <nav className="space-x-3 md:space-x-6 hidden lg:block">
+            {/* {links.map(({ id, href, label }) => (
               <Link
                 className="text-sm font-semibold text-white hover:text-accent"
                 key={id}
@@ -38,10 +44,27 @@ const Navbar = () => {
               >
                 {label}
               </Link>
-            ))}
+            ))} */}
+            {
+              allfiles.map((metalSlug, index) => {
+                const filePath = path.join(contentFolderPath, metalSlug)
+                const pageContent = matter(readFileSync(filePath, 'utf-8'))
+                return (
+                  <Link
+                    key={index}
+                    className="text-sm font-semibold text-white hover:text-accent"
+                    href={`/deals-in/${metalSlug.split('.mdx')[0]}`}
+                  >
+                    {pageContent.data.title}
+
+                  </Link>
+                )
+              })
+            }
+
           </nav>
-          <Link href="/#contact">
-            <Button variant="secondary">Contact us</Button>
+          <Link href="/scrap-pricing">
+            <Button variant="secondary">Get a Quote</Button>
           </Link>
         </div>
       </div>

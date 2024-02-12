@@ -54,15 +54,12 @@ export default function Solutions() {
               We Deal In
             </div>
             <h2 className="mb-4 text-4xl font-titillium font-bold text-black dark:text-white">
-              Navigating the Path to Seamless Metal Transactions
+              Simplifying Metal Recycling
             </h2>
             <div className="mb-3 mx-auto h-1.5 w-12 rounded-lg bg-accent" />
 
             <h3 className="mx-auto text-xl font-medium leading-relaxed text-gray-700 lg:w-2/3">
-              Skip the hassle, maximize the value. Titan Alloys streamlines your
-              metal recycling experience, saving you time and money. Unlock the
-              full potential of your scrap - we&apos;re with you every step of
-              the way.
+              Efficient Metal Recycling with Titan Alloys. Save time and money, get the best value for your scrap. We support you at every step
             </h3>
           </div>
           {/* END Heading */}

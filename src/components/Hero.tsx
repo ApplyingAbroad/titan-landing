@@ -1,4 +1,3 @@
-import { IconCube } from '@tabler/icons-react'
 import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
@@ -20,18 +19,14 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="container relative px-4 lg:px-8 py-16 lg:py-32">
         <h1 className="font-titillium leading-tight mb-4 max-w-3xl text-3xl md:text-4xl lg:text-6xl font-bold text-white">
-          Transforming Your <span className="text-accent">Scrap</span> into
-          Precious Wealth
+          Converting <span className="text-accent">Scrap Metal</span> into
+          Valuable Resources
         </h1>
-        <h2 className="md:text-lg lg:text-xl font-medium leading-relaxed text-white opacity-80 lg:w-2/3">
+        <p className="md:text-lg lg:text-xl font-medium leading-relaxed text-white opacity-80 lg:w-2/3">
           Welcome to Titan Alloys LLC, an Illinois (USA) based Metal Trading
-          Company with a focus on the efficient handling, recycling, and trading
-          of both Ferrous and Non-Ferrous alloys. Our expertise lies in the
-          meticulous processes involved in sorting and processing high-value
-          materials like Tungsten Carbide, Toolsteel, and High-Temperature
-          Alloys. We are dedicated to maintaining high standards in our
-          operations and contributing to the sustainable metal industry.
-        </h2>
+          Company, specializing in the eco-friendly recycling and trading of both ferrous and non-ferrous metals. Our core expertise lies in advanced recycling techniques for valuable metals such as copper, aluminum, steel, and brass. Committed to environmental sustainability, we focus on reducing waste and repurposing metal scrap into valuable resources. Join us in our mission to contribute to a greener planet by promoting sustainable metal recycling practices.
+        </p>
+
         <div className="flex flex-col space-y-2 pb-16 pt-10 sm:flex-row sm:space-x-2 sm:space-y-0">
           {/* <Button
             size="lg"

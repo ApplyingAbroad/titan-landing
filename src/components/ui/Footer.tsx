@@ -66,7 +66,7 @@ export default function Footer() {
                 <br />
                 United States
                 <br />
-                <abbr title="Phone">P:</abbr> +1 (778) 892-0779
+                <abbr title="Phone">P:</abbr> +1 (773) 200-5320
                 <br />
                 <br />
                 Mail us at{' '}

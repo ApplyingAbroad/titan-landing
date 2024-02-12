@@ -6,7 +6,7 @@ const WhatsappBecon = () => {
   return (
     <>
       <Link
-        href="https://api.whatsapp.com/send?phone=+919878877773&text=👋%20Hi%20there!%20Wanted%20to%20connect%20related%20to%20Titan%20Alloys%20LLC"
+        href="https://api.whatsapp.com/send?phone=+17732005320&text=👋%20Hi%20there!%20Wanted%20to%20connect%20related%20to%20Titan%20Alloys%20LLC"
         target="_blank"
         className="fixed bottom-0 right-0 group z-50 m-4"
       >
