@@ -76,37 +76,24 @@ const Form = () => {
 
 
     const handleSubmit = async (event: any) => {
-        event.preventDefault(); // Prevent default form submission behavior
+        event.preventDefault();
 
-        // Construct form data object
         const formData = {
-            // Add all form fields here
             name: event.target.name.value,
             email: event.target.email.value,
             message: event.target.message.value,
-            // Include other fields as necessary
         };
 
-        // Submit form data to your API route
-        const response = await fetch('/api/submitForm', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
 
-        const data = await response.json();
 
-        // Handle response here (e.g., show a success message, clear form, etc.)
-        console.log(data);
+        console.log(formData);
     };
 
 
     return (
         <div
             id="contact"
-            className="scroll-m-28 relative bg-white bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4"
+            className="mb-8 scroll-m-28 relative bg-white bg-cover container max-w-5xl lg:-mt-28 px-0 border-accent border-4"
         >
             <div className="relative mx-auto px-4 py-16 lg:px-8">
                 <div className="space-y-16 lg:px-14 xl:px-20">
@@ -145,28 +132,28 @@ const Form = () => {
                                         <TableCell>
                                             <Checkbox
                                                 id={`solids-${grade.value}`}
-                                                name={`${grade.value}`}
+                                                name={`${grade.value}[]`}
                                                 value={`solids`}
                                             />
                                         </TableCell>
                                         <TableCell>
                                             <Checkbox
                                                 id={`turnings-${grade.value}`}
-                                                name={`${grade.value}`}
+                                                name={`${grade.value}[]`}
                                                 value={`turnings`}
                                             />
                                         </TableCell>
                                         <TableCell>
                                             <Checkbox
                                                 id={`grindings-${grade.value}`}
-                                                name={`${grade.value}`}
+                                                name={`${grade.value}[]`}
                                                 value={`grindings`}
                                             />
                                         </TableCell>
                                         <TableCell>
                                             <Checkbox
                                                 id={`sludge-${grade.value}`}
-                                                name={`${grade.value}`}
+                                                name={`${grade.value}[]`}
                                                 value={`sludge`}
                                             />
                                         </TableCell>

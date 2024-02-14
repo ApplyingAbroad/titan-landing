@@ -12,7 +12,7 @@ const steps = [
     id: 2,
     title: 'Step 2: Ship Your Materials',
     description:
-      'Once you&apos;ve received your quote and are ready to proceed, securely ship your materials to our state- of - the - art facilities.Our logistics team ensures a smooth and efficient process, guiding you through every step to guarantee the safe arrival of your alloys at Titan Alloys.',
+      "Once you've received your quote and are ready to proceed, securely ship your materials to our state- of - the - art facilities.Our logistics team ensures a smooth and efficient process, guiding you through every step to guarantee the safe arrival of your alloys at Titan Alloys.",
   },
   {
     id: 3,

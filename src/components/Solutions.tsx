@@ -36,7 +36,7 @@ export default function Solutions() {
           {/* END Heading */}
 
           {/* Features */}
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 xl:gap-16 max-w-5xl mx-auto">
             {allfiles.map((metalSlug, index) => {
               const filePath = path.join(contentFolderPath, metalSlug)
               const pageContent = matter(readFileSync(filePath, 'utf8'))

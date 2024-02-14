@@ -9,6 +9,7 @@ export default function Footer() {
 
   return (
     <>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11864.564037575865!2d-87.68634932102007!3d41.97578217485911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd188075e5361%3A0x5615a74b122a5c02!2s5145%20N%20Clark%20St%2C%20Chicago%2C%20IL%2060640%2C%20USA!5e0!3m2!1sen!2sin!4v1707897414894!5m2!1sen!2sin" width="100%" height="300" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       <footer
         id="page-footer"
         className="bg-white dark:bg-gray-900 dark:text-gray-100"
@@ -79,6 +80,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
           <hr className="my-10 dark:border-gray-700/75" />
           <div className="text-center text-sm">
             <div className="text-gray-500 dark:text-gray-400/80">
