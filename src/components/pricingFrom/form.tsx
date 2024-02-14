@@ -84,6 +84,37 @@ const Form = () => {
             message: event.target.message.value,
         };
 
+        let newData: any = {
+            h13: [],
+            d2: [],
+            s7: [],
+            a2: [],
+            m2: [],
+            m1: [],
+            m35: [],
+            m42: [],
+            tseries: [],
+            mixed: [],
+            tungstencarbide: [],
+            alloysteel: [],
+            others: [],
+        }
+
+        for (const key in newData) {
+            console.log(key)
+            const element = newData[key];
+            // const value = event.target[key + '-quantity'].value
+            // const grade = `${key}[]`
+            // for (const el of event.target[`${key}`]) {
+
+            // if (el.checked) {
+            // element.push(el.value)
+            // }
+            // }
+        }
+
+
+        console.log(newData)
 
 
         console.log(formData);
