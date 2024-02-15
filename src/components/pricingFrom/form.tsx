@@ -101,7 +101,7 @@ const Form = () => {
 
     for (const grade of grades) {
       const gradeValue = grade.value
-      const gradeData: any = {
+      let gradeData: any = {
         scrapTypes: [],
       }
 
@@ -128,6 +128,10 @@ const Form = () => {
       }
 
       // Add the array of checkbox values to newData with the grade as the key
+      gradeData = {
+        ...gradeData,
+        scrapTypes: gradeData.scrapTypes?.join(',') || '',
+      }
       newData[gradeValue] = gradeData
     }
 
@@ -141,9 +145,12 @@ const Form = () => {
     console.log(newData)
 
     try {
-      const ref = collection(db, 'contact')
-      await addDoc(ref, newData)
-      console.log('Document written successfully: ')
+      const docRef = await addDoc(collection(db, 'contact'), {
+        newData,
+      })
+      // const ref = collection(db, 'contact')
+      // await addDoc(ref, newData)
+      console.log('Document written with ID:', docRef.id)
       return 0
     } catch (error) {
       console.error('Error adding document: ', error)
